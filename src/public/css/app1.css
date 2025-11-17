@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: black;
+    width: auto;
+    height: 70px;
+}
+.header-title{
+    color: white;
+}
