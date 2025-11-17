@@ -5,8 +5,10 @@ body{
 header{
     background-color: black;
     width: auto;
-    height: 70px;
+    height: 100px;
+    display: flex;
+    align-items: center;
 }
-.header-title{
-    color: white;
+.header-logo{
+    padding-left: 20px;
 }

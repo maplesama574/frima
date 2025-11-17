@@ -20,3 +20,10 @@ Route::get('/', function () {
 
 //ここから
 Route::get('/register', [FrimaController::class, 'register'])->name('register');
+Route::get('/email/verify', [FrimaController::class, 'email'])->name('email');
+Route::get('/login', [FrimaController::class, 'login'])->name('login');
+
+//認証ミドルウェア
+Route::middleware('site')->group(function(){
+    Route::get('/', [FrimaController::class, 'index']);
+});

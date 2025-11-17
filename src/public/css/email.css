@@ -1,0 +1,23 @@
+main {
+    width: auto;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 0;
+}
+.email-complete{
+    white-space: pre-line;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.email-button{
+    font-weight: bold;
+}
