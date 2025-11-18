@@ -27,3 +27,8 @@ Route::get('/login', [FrimaController::class, 'login'])->name('login');
 Route::middleware('site')->group(function(){
     Route::get('/', [FrimaController::class, 'index']);
 });
+
+//初回プロフィール
+Route::get('/login/first', [FrimaController::class, 'first'])->name('first');
+Route::post('/login/first', [FirstLoginController::class, 'update'])->name('first');
+Route::get('/login/first', [FrimaController::class, 'search'])->name('search');

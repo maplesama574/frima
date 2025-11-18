@@ -19,5 +19,7 @@ main {
     padding-bottom: 20px;
 }
 .email-button{
-    font-weight: bold;
+    font-weight: bolder;
+    margin-top: 40px;
+    text-decoration: none;
 }

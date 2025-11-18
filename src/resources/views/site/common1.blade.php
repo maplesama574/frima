@@ -13,7 +13,6 @@
             <a class="header-logo" href="{{ route('login') }}">
                 <img src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="ロゴ" style="height: 35px; width: auto;">
             </a>
-
         </div>
     </header>
 

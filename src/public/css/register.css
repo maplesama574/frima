@@ -26,10 +26,12 @@ form input {
     font-weight: bold;
 }
 .register-item input{
-    padding: 10px 190px;
+    height: 40px;
+    width: 580px;
 }
-.register-input::placeholder{
+.register-input{
     text-align: left;
+    padding-left: 10px;
 }
 
 /*登録ボタン*/
@@ -59,6 +61,7 @@ form input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 }
 .login-button{
     text-decoration: none;

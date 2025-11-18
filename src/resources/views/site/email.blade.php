@@ -14,7 +14,7 @@
                 @csrf
             <button class="verify-button" type="submit">認証はこちらから</button>
         </form>
-        <a href="/email/verfity">認証メールを再送する</a>
+        <a class="email-button" href="/email/verfity">認証メールを再送する</a>
     </div>
 
 </main>
