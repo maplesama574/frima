@@ -6,10 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateItemsTable extends Migration
 {
-    public function up()
+    public function up():void
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->id();
+        $table->id();
         $table->unsignedBigInteger('user_id');
         $table->string('name');                 
         $table->text('description');
@@ -23,7 +23,7 @@ class CreateItemsTable extends Migration
 
     }
 
-    public function down()
+    public function down():void
     {
         Schema::dropIfExists('items');
     }

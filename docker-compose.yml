@@ -1,10 +1,11 @@
 version: '3.8'
 
 services:
-  nginx:
-    image: nginx:1.21.1
+  mailhog:
+    image: mailhog/mailhog
     ports:
-      - "80:80"
+      - "1025:1025"
+      - "8025:8025" 
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./src:/var/www/

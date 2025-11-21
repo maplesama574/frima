@@ -1,21 +1,28 @@
 @extends('site.common1')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/email.css')}}">
+<link rel="stylesheet" href="{{ asset('css/email.css') }}">
 @endsection
 
 @section('content')
 <main>
     <div class="email">
-        <p class="email-complete">登録していただいたメールアドレスに認証メールを送付しました。
-            メール認証を完了してください。
+        <p class="email-complete">
+            登録していただいたメールアドレスに認証メールを送付しました。<br>
+            メール内のリンクをクリックして認証を完了してください。
         </p>
-        <form action="{{route('email')}}" method="POST">
-                @csrf
-            <button class="verify-button" type="submit">認証はこちらから</button>
-        </form>
-        <a class="email-button" href="/email/verfity">認証メールを再送する</a>
-    </div>
 
+        @if (session('message'))
+            <div class="resend-message">
+                {{ session('message') }}
+            </div>
+        @endif
+
+        <!-- 認証メール再送 -->
+        <form action="{{ route('verification.send') }}" method="POST">
+            @csrf
+            <button class="verify-button" type="submit">認証メールを再送する</button>
+        </form>
+    </div>
 </main>
 @endsection

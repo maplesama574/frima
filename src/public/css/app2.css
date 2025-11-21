@@ -41,6 +41,7 @@ header {
 }
 .nav{
     color: white;
+    padding-top: 5px;
 }
 .nav-sell{
     display: block;
@@ -48,4 +49,11 @@ header {
     color: black;
     padding: 5px 8px;
     border-radius: 3px;
+}
+.input-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 100%;
+    display: block;
 }

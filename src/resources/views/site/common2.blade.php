@@ -17,7 +17,7 @@
     </div>
 
     <div class="search-form">
-        <form action="{{ route('search') }}" method="GET">
+        <form action="{{ route('first.search') }}" method="GET">
             @csrf
             <input type="text" name="keyword" placeholder="なにをお探しですか？">
         </form>

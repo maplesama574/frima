@@ -6,15 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
-    /*メール認証*/
-    use Notifiable;
-    protected $fillable=[
+    protected $fillable = [
         'name',
         'email',
         'password',
@@ -22,10 +19,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'address',
         'building',
     ];
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+
+    protected $hidden = ['password', 'remember_token'];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
