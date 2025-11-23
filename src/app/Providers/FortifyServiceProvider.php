@@ -2,31 +2,27 @@
 
 namespace App\Providers;
 
-use App\Actions\Fortify\CreateNewUser;
-use App\Actions\Fortify\ResetUserPassword;
-use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use App\Actions\Fortify\LoginResponse;
+use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
+use Illuminate\Support\Facades\Auth;
 
 class FortifyServiceProvider extends ServiceProvider
 {
-    public function boot(){
-        Fortify::createUsersUsing(CreateNewUser::class);
+    public function register()
+    {
+        $this->app->singleton(LoginResponseContract::class, LoginResponse::class);
+    }
 
-    Fortify::registerView(function(){
-        return view('site.register');
-    });
-    Fortify::loginView(function(){
-        return view('site.login');
-    });
-    Ratelimiter::for('login', function(Request $request){
-        $email=(string) $request->email;
-        return Limit::perMinute(10)->by($email . $request->ip());
-    });
+    public function boot()
+    {
+        Fortify::loginView(function () {
+            return view('site.login');
+        });
+
+        Fortify::authenticateUsing(function ($request) {
+            return Auth::attempt($request->only('email', 'password')) ? Auth::user() : null;
+        });
     }
 }

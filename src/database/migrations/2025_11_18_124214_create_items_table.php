@@ -17,6 +17,7 @@ class CreateItemsTable extends Migration
         $table->string('image_path');
         $table->string('condition');
         $table->string('brand');
+        $table->string('categories')->nullable;
         $table->timestamps();
         $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });

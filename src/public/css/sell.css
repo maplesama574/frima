@@ -1,0 +1,26 @@
+.sell{
+    text-align: center;
+}
+
+
+
+.category-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-item {
+    padding: 5px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.category-item.active {
+    background-color: #ff5555;
+    color: white;
+    border-color: #ff5555;
+}
+

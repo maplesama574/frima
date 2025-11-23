@@ -20,19 +20,19 @@
 
 
             <div class="upload-item">
-                <p class="upload-item__title">ユーザー名</p>
+                <label class="upload-item__title">ユーザー名</label>
                 <input class="upload-input" type="text" name="name">
             </div>
             <div class="upload-item">
-                <p class="upload-item__title">郵便番号</p>
+                <label class="upload-item__title">郵便番号</label>
                 <input class="upload-input" type="number" name="postal_code">
             </div>
             <div class="upload-item">
-                <p class="upload-item__title">住所</p>
+                <label class="upload-item__title">住所</label>
                 <input class="upload-input" type="text" name="address">
             </div>
             <div class="upload-item">
-                <p class="upload-item__title">建物名</p>
+                <label class="upload-item__title">建物名</label>
                 <input class="upload-input" type="text" name="building">
             </div>
             <div class="button">

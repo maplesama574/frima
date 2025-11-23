@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Auth\Events\Registered;
 use App\Models\Favorite;
 
@@ -49,14 +50,19 @@ class FrimaController extends Controller
     }
 
     public function first()
-    {
+{
     $user = Auth::user();
+
     if (!$user) {
-        return redirect()->route('login'); 
+        return redirect()->route('login');
+    }
+
+    if ($user->first_login_completed) {
+        return redirect()->route('dashboard');
     }
 
     return view('site.first-login', compact('user'));
-    }
+}
 
 
     public function search(Request $request)
@@ -79,9 +85,9 @@ class FrimaController extends Controller
         $request->validate([
             'image' => 'nullable|image|max:2048',
             'name' => 'required|string|max:255',
-            'postal_code' => 'required',
-            'address' => 'required',
-            'building' => 'nullable'
+            'postal_code' => 'required|string',
+            'address' => 'required|string',
+            'building' => 'nullable|string'
         ]);
 
         $user = Auth::user();
@@ -93,26 +99,68 @@ class FrimaController extends Controller
         }
 
         // 情報更新
-        $user->name = $request->name;
-        $user->postal_code = $request->postal_code;
-        $user->address = $request->address;
-        $user->building = $request->building;
-        $user->save();
+        $user->update([
+        'name' => $request->name,
+        'postal_code' => $request->postal_code,
+        'address' => $request->address,
+        'building' => $request->building,
+        'first_login_completed' => true, 
+    ]);
 
-        return redirect('/')->with('success', 'プロフィールを更新しました');
+        return redirect()->route('dashboard');
+
     }
 
     //ホームページ
     public function index()
-{
+    {
     $items = Item::all();
-    $favorites = Favorite::where('user_id', auth()->id())->get();
+    $favorites = Favorite::where('user_id', auth()->id())->whereNotNull('item_id')                         ->with('item')                         ->get();
 
     return view('site.dashboard', compact('items', 'favorites'));
+    }
+
+    public function show($id)
+    {
+    $item = Item::findOrFail($id);
+    return view('site.item-detail', compact('item'));
+    }
+
+    public function storeComment(Request $request, $item_id)
+{
+    $request->validate([
+        'comment' => 'required|string|max:1000',
+    ]);
+
+    Comment::create([
+        'user_id' => auth()->id(),
+        'item_id' => $item_id,
+        'comment' => $request->comment,
+    ]);
+
+    return redirect()->route('item.detail', ['item_id' => $item_id]);
 }
-
-
     
+public function sell(){
+    $categories = [
+        'ファッション', 
+        '家電', 
+        'インテリア', 
+        'レディース', 
+        'メンズ', 
+        'コスメ', 
+        '本', 
+        'ゲーム', 
+        'スポーツ',
+        'キッチン',
+        'ハンドメイド',
+        'アクセサリー',
+        'おもちゃ',
+        'ベビー・キッズ',
+    ];
+
+    return view('site.sell', compact('categories'));
+}
 
 
 

@@ -13,25 +13,34 @@
         <button class="tab" data-target="tab2">マイリスト</button>
     </div>
 
+    <div class="tab-underline"></div>
+
     <div id="tab1" class="tab-content active">
-        @foreach($items as $item)
-            <div class="item">
+    @foreach($items as $item)
+        <div class="item">
+            <a href="{{ route('item.detail', ['item_id' => $item->id]) }}">
                 <img src="{{ asset('storage/items/' . $item->image_path) }}" alt="{{ $item->name }}">
                 <p class="item-text">{{ $item->name }}</p>
-            </div>
-        @endforeach
+            </a>
+        </div>
+    @endforeach
+</div>
 
-    </div>
-
-    {{-- ▼▼ タブ2：マイリスト ▼▼ --}}
-    <div id="tab2" class="tab-content">
-        @foreach($favorites as $item)
+<div id="tab2" class="tab-content">
+    @foreach($favorites as $favorite)
+        @if($favorite->item) 
             <div class="item">
-                <img src="{{ asset('storage/items/' . $item->image_path) }}" alt="{{ $item->name }}">
-                <p class="item-text">{{ $item->message }}</p>
+                <a href="{{ route('item.detail', ['item_id' => $favorite->item->id]) }}">
+                    <img src="{{ asset('storage/items/' . $favorite->item->image_path) }}" alt="{{ $favorite->item->name }}">
+                    <p class="item-text">{{ $favorite->item->name }}</p>
+                </a>
             </div>
-        @endforeach
-    </div>
+        @endif
+    @endforeach
+</div>
+
+
+
 
 </div>
 

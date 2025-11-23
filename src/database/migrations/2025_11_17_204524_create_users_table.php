@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('building')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->boolean('first_login_completed')->default(false);
         });
     }
 

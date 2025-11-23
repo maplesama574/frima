@@ -11,7 +11,7 @@
     <header>
         <div class="header-title">
     <div class="logo">
-        <a href="{{ route('login') }}">
+        <a href="{{ route('dashboard') }}">
             <img src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="ロゴ">
         </a>
     </div>
