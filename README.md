@@ -34,8 +34,7 @@ exit
 cd src
 cp .env.testing.example .env
 そのあと.envファイルのstripeに変更
-STRIPE_KEY=REMOVED
-STRIPE_SECRET=REMOVED
+
 
 docker-compose exec php bash
 php artisan key:generate
