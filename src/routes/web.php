@@ -5,12 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
-Route::get('/', [FrimaController::class, 'index'])->name('dashboard');
-
-Route::get('/favorites', [FrimaController::class, 'like'])
-    ->middleware('auth')
-    ->name('like');
-    
+Route::get('/', [FrimaController::class, 'index'])
+    ->name('dashboard')
+    ->middleware('auth');
 
 // 商品詳細
 Route::get('/item/{item_id}', [FrimaController::class, 'show'])->name('item.detail');
@@ -49,8 +46,6 @@ Route::get('/redirect-after-login', function () {
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-Route::post('/items', [FrimaController::class, 'store'])->name('items.store');
-
 Route::post('/items/{item}/favorite', [FrimaController::class, 'toggleFavorite'])
 ->middleware('auth')
 ->name('item.favorite');
@@ -78,17 +73,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // マイページ
     Route::get('/mypage', [FrimaController::class, 'showMypage'])->name('mypage');
-    Route::get('/purchased', [FrimaController::class, 'showPurchased'])->name('purchased');
-    
+
     // プロフィール
     Route::get('/mypage/profile', [FrimaController::class, 'showProfileEdit'])->name('profile.edit');
     Route::post('/mypage/profile', [FrimaController::class, 'updateProfile'])->name('profile.update');
 
     Route::get('/purchase/{item_id}', [FrimaController::class, 'buy'])->name('item.buy');
-    Route::post('/purchase/{item_id}', [FrimaController::class, 'processPurchase'])->name('process.purchase')->middleware('auth');
-    Route::get('/purchased/items', [FrimaController::class, 'purchasedItems'])->name('purchased.items');
+    Route::post('/purchase/{item_id}', [FrimaController::class, 'processPurchase'])->name('process.purchase');
 
-    Route::post('/purchase/address/{item_id}', [FrimaController::class, 'changeAddress'])->name('address');
+    Route::get('/purchase/address/{item_id}', [FrimaController::class, 'changeAddress'])->name('address');
 
     // Stripe
     Route::post('/stripe/{item_id}/checkout', [FrimaController::class, 'checkout'])->name('item.checkout');

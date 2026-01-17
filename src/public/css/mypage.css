@@ -1,0 +1,173 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 0;
+    overflow: hidden;
+    height: 800px;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 60px;
+}
+
+.profile-image-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 160px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.user {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 50px;
+}
+
+.image-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: -10px;
+}
+.profile-edit {
+    margin-left: 390px;
+    color: #ff5555;
+    border: 2px solid #ff5555;
+    border-radius: 10px;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+/**/
+
+
+
+
+
+/*購入した商品と出品した商品*/
+.tabs {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tab {
+    margin-top: 10px;
+    padding: 20px 10px;
+    padding-bottom: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 20px;
+}
+
+.tab:first-child {
+    margin-left: 0;
+}
+
+.tab.active {
+    color: #ff5555;
+}
+
+.tab-underline {
+    width: 100%;
+    height: 2px;
+    background-color: grey;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.tab-content {
+    display: none;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.tab-content.active {
+    display: flex;
+}
+
+.item img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item a:hover {
+    text-decoration: none;
+}
+
+.item-text {
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+    color: black;
+}
+
+.item {
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.soldout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+}

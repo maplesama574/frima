@@ -1,0 +1,40 @@
+main {
+    width: auto;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 0;
+}
+.email-complete{
+    white-space: pre-line;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+    line-height: 0.8;
+}
+
+.verify-form{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #cdcdcd;
+    font-weight: bold;
+    padding:10px 15px;
+    text-decoration: none;
+    margin-bottom: 30px;
+    color: black;
+}
+.verify-button{   
+    color: blue;
+    font-size: 13px;
+    text-decoration: none;
+    border: none;
+    background: none;
+}

@@ -1,0 +1,149 @@
+.item-detail{
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    width: auto;
+    height: 1200px;
+}
+/*画像*/
+.item-detail__img{
+    padding:70px 50px;
+}
+.item-detail__img img{
+    width: 600px;
+    height: 600px;
+}
+
+/*説明１*/
+.item-detail__text{
+    flex: 1;
+    padding-top: 25px;
+}
+
+.purchase-form h2{
+    font-size: 40px;
+    padding-top: 20px;
+    margin: 0;
+}
+.item-brand {
+    font-size: 15px;
+    display: block;
+    line-height: 1;
+}
+.item-normal{
+    font-size: 30px;
+}
+
+/*購入ボタン*/
+.purchase-button{
+    background-color: #ff5555;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 200px;
+}
+
+/*商品説明２*/
+.comment-form h3{
+    font-size: 25px;
+    margin-bottom: 0;
+}
+.item-small{
+    padding: 20px 0;
+}
+
+/*テーブル*/
+.information-table{
+    margin-top: 10px;
+}
+.table-content {
+    height: 40px;
+}
+.table-content+.table-content {
+    margin-top: 20px;
+}
+.table-header{
+    padding-right: 20px;
+    font-size: 18px;
+}
+/* カテゴリーの見た目 */
+.category-block {
+    display: inline-block;
+    /* 横並び */
+    background-color: #d9d9d9;
+    padding: 3px 8px;
+    margin-right: 5px;
+    /* 隣のカテゴリーとの間隔 */
+    margin-bottom: 5px;
+    /* 複数行になった場合の下マージン */
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.table-detail {
+    white-space: normal;
+    /* 折り返し可能に */
+}
+
+/*コメント*/
+.comment-box {
+    display: block;
+    padding: 10px;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    width: 80%;
+    text-align: left;
+}
+.item-comment{
+    font-weight: bold;
+    font-size: 20px;
+}
+.comment textarea {
+    display: block;
+    width: 80%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/*コメントボタン*/
+.comment-button {
+    background-color: #ff5555;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 175px;
+    margin-top: 40px;
+}
+
+/*いいね　ふきだし　アイコン*/
+.comment-item{
+    display: flex;
+    align-items: center;
+}
+.comment-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-right: 10px;
+}
+.comment-user{
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 5px;
+}
+.reaction {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding-left: 35px;
+    padding-bottom: 10px;
+}
+.reaction-count{
+    padding-left: 18px;
+}

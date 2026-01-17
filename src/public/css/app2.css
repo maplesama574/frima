@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    width: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 35px;
+    width: auto;
+}
+
+.search-form input {
+    width: 500px;
+    height: 40px;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+.search-nav {
+    display: flex;
+    gap: 15px;
+}
+.nav, 
+.nav-sell{
+    text-decoration: none;
+}
+.logout-link {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 23px;
+    padding-top: 5px;
+    text-decoration: none;
+}
+.nav{
+    color: white;
+    padding-top: 5px;
+    font-size: 23px;
+}
+.nav-sell{
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 23px;
+}
+.input-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 100%;
+    display: block;
+}

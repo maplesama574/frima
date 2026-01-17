@@ -1,0 +1,70 @@
+main{
+    width: auto;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/*登録入力フォーム*/
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register h2{
+    padding:20px 0 ;
+}
+form p {
+    margin-bottom: 5px;
+}
+
+form input {
+    margin-top: 0;
+}
+.register-item__title{
+    font-weight: bold;
+}
+.register-item input{
+    height: 40px;
+    width: 580px;
+}
+.register-input{
+    text-align: left;
+    padding-left: 10px;
+    box-sizing: border-box;width: 100%;
+}
+
+/*登録ボタン*/
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-button{
+    display: block;
+    color: white;
+    outline: none;
+    border: none;
+    background-color: #ff5555;
+    border-radius: 5px;
+    padding: 10px 225px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+/*ログインはこちら*/
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.login-button{
+    text-decoration: none;
+    color: blue;
+}
