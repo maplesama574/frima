@@ -32,7 +32,7 @@ composer install
 exit
 
 cd src
-cp .env.testing.example .env
+cp .env.testing .env
 
 docker-compose exec php bash
 php artisan key:generate
