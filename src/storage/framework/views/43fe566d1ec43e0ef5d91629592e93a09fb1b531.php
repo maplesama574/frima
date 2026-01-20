@@ -46,12 +46,10 @@
             <table class="information-table">
                 <tr class="table-content">
                     <th class="table-header">カテゴリー</th>
-                    <td class="table-detail">
-<?php $__currentLoopData = $item->categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <span class="category-block"><?php echo e($category->name); ?></span>
+                    <td class="table-detail"><?php $__currentLoopData = explode(',', $item->category); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <span class="category-block"><?php echo e($category); ?></span>
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-</td>
-
+                    </td>
                 </tr>
                 <tr class="table-content">
                     <th class="table-header">商品の状態</th>
