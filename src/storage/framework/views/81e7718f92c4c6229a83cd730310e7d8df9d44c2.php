@@ -16,15 +16,12 @@
         </a>
     </div>
 
-<div class="search-form">
-    <form method="GET"
-          action="<?php echo e(request()->routeIs('like') ? route('like') : route('dashboard')); ?>">
-        <input type="text" name="keyword"
-               value="<?php echo e(request('keyword')); ?>"
-               placeholder="なにをお探しですか？">
-    </form>
-</div>
-
+    <div class="search-form">
+        <form action="<?php echo e(route('first.search')); ?>" method="GET">
+            <?php echo csrf_field(); ?>
+            <input type="text" name="keyword" placeholder="なにをお探しですか？">
+        </form>
+    </div>
 
 <div class="search-nav">
     <?php if(auth()->guard()->check()): ?>
