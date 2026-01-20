@@ -24,11 +24,6 @@ exit
 
 cd src
 cp .env.testing .env
-cd ..
-code .
-.envに下記を記載
-STRIPE_KEY=pk_test_51SjcepEN6rjCDyVCJ6C0bTWBJ6kx1bXqpcNn0z5pgQ54NcHwX9cXFxwDd9ZJf2n1ysXgizuCbkjjr9HIWBYj713n00TEKh3pPP
-STRIPE_SECRET=sk_test_51SjcepEN6rjCDyVCnk5XAQSKUS003eQplrEFCJO8YbOhjO9GNfdr11uGzn5r9SHoLkZE9y8dLZmXw9In7Bw4i70N00NC3sjIca
 
 docker-compose exec php bash
 php artisan key:generate
