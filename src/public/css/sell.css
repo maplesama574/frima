@@ -133,11 +133,11 @@
     margin: 30px 0;
     background-color: #ff5555;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     border: none;
     border-radius: 3px;
-    padding: 10px 363px;
+    padding: 15px 363px;
 }
 
 .input-error{
