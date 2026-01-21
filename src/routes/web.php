@@ -9,6 +9,14 @@ Route::get('/', [FrimaController::class, 'index'])
     ->name('dashboard')
     ->middleware('auth');
 
+// 新規登録
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
+Route::post('/register', [FrimaController::class, 'store'])
+    ->name('register.store');
+
 // 商品詳細
 Route::get('/item/{item_id}', [FrimaController::class, 'show'])->name('item.detail');
 

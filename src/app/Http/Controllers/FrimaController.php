@@ -22,8 +22,6 @@ class FrimaController extends Controller
 {
     public function register()
     {
-        dd('test');
-        exit;
         $this->app->singleton(LoginResponseContract::class, function ($app) {
             return new class implements LoginResponseContract {
                 public function toResponse($request)
