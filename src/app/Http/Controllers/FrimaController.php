@@ -27,8 +27,6 @@ class FrimaController extends Controller
                 public function toResponse($request)
                 {
                     $user = $request->user();
-                    dd($user);
-                    exit;
                     if (! $user->hasVerifiedEmail()) {
                         return redirect()->route('verification.notice');
                     }
