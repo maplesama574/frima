@@ -20,6 +20,7 @@ use App\Http\Requests\FirstLoginRequest;
 
 class FrimaController extends Controller
 {
+
     public function register()
     {
         $this->app->singleton(LoginResponseContract::class, function ($app) {
